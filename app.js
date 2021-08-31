@@ -10,7 +10,7 @@ const app = express();
 const dbURI='mongodb+srv://bedair1:bedair1234@cluster0.aldaf.mongodb.net/Task1?retryWrites=true&w=majority';
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(result => app.listen(3000))
+  .then(result => app.listen(process.env.POST || 3000))
   .catch(err => console.log(err));
 
 // register view engine
